@@ -1,0 +1,50 @@
+[
+    {
+      "id": "001",
+      "activity": "workout",
+      "discription":"Running is the best workout for us , if you want to live a helthy life Running is for you",
+      "name": "Running",
+      "img": "https://cdn.mos.cms.futurecdn.net/Tub9SozhpGmcFqtwmfVuT8.jpg",
+      "time": 25
+    },
+    {
+      "id": "002",
+      "activity": "workout",
+      "discription":"Cycleing is the best workout for us , if you want to live a helthy life Cycling is for you",
+      "name": "Cycling",
+      "img": "https://images.immediate.co.uk/production/volatile/sites/21/2020/05/Ribble-Endurance-SL-04-73313f3.jpg?quality=90&resize=620,413",
+      "time": 20
+    },
+    {
+      "id": "003",
+      "activity": "workout",
+      "discription":"Swiming is the best workout for us , if you want to live a helthy life Swiming is for you",
+      "name": "Swiming",
+      "img": "https://images.theconversation.com/files/435472/original/file-20211202-19-26j0je.jpg?ixlib=rb-1.1.0&rect=0%2C11%2C3888%2C2572&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip",
+      "time": 30
+    },
+    {
+      "id": "004",
+      "activity": "workout",
+      "discription":"Pushup is the best workout for us , if you want to live a helthy life Pushup is for you",
+      "name": "Pushup",
+      "img": "https://images.medicinenet.com/images/article/main_image/what-are-push-ups-for.jpg",
+      "time": 5 
+    },
+    {
+      "id": "005",
+      "activity": "workout",
+      "discription":"Jumping is the best workout for us , if you want to live a helthy life Jumping is for you",
+      "name": "Jumping",
+      "img": "https://media.istockphoto.com/photos/unrecognizable-sportswoman-jumping-rope-on-a-bridge-picture-id1128646064?k=20&m=1128646064&s=612x612&w=0&h=8Mc239xS9Il-n6lf6R3QSsDYlLkq8XsBpPWKnmO09VE=",
+      "time": 15
+    },
+    {
+      "id": "006",
+      "activity": "workout",
+      "discription":"Swiming is the best workout for us , if you want to live a helthy life Swiming is for you",
+      "name": "Walking",
+      "img": "https://parade.com/.image/t_share/MTkwNTgwOTQwODQ2NDA4ODI5/walking-to-get-fit-jpg.jpg",
+      "time": 60
+    }
+  ]
