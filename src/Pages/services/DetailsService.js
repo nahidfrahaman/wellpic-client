@@ -1,5 +1,6 @@
 import React from 'react';
 import AddAReview from './AddAReview';
+import AddReviewfield from './AddReviewfield';
 import ProductDetailsSection from './ProductDetailsSection';
 import ProductReviewSection from './ProductReviewSection';
 
@@ -14,6 +15,7 @@ const DetailsService = () => {
        </section>
        <section className='m-8'>
             <AddAReview></AddAReview>
+            <AddReviewfield></AddReviewfield>
        </section>
        
        </>
