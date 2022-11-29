@@ -21,11 +21,14 @@ export  const router = createBrowserRouter([
        
         {
          path:'/home',
-         element:<Home></Home>
+         element:<Home></Home>,
         },
         {
          path:'/services',
-         element:<Services></Services>
+         element:<Services></Services>,
+         loader : async()=>{
+          return fetch('http://localhost:5000/all/services')
+         }
         },
         {
          path:'/services/id',
