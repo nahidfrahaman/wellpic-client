@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
+import LoaderSpinner from '../../components/LoaderSpinner';
+import { AuthContex } from '../../Context/AuthProvider';
 
 
 const Login = () => {
-    const { register,   handleSubmit,  formState: { errors }, } = useForm();
+  const { register,   handleSubmit,  formState: { errors }, } = useForm();
+    const {login,loading, setLoading,user}  = useContext(AuthContex);
+    const navigate = useNavigate()
+
+
+    if(user && loading){
+      return <LoaderSpinner></LoaderSpinner>
+    }
+
     const onSubmit = (data) =>{
-       console.log(data)
+       login(data.email, data.password)
+       .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user)
+        toast.success('user login confirm')
+        // ...
+        setLoading(false)
+        navigate('/')
+      })
+      .catch((error) => {
+        toast.error(error.message)
+        setLoading(false)
+      });
       };
 
 
@@ -34,7 +58,7 @@ const Login = () => {
               <span className="label-text">Password</span>
             </label>
             <input
-              type="password"
+              type="text"
               {...register("password", 
               { required: 'password field is required',
               minLength: {

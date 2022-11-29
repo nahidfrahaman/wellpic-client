@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import LoaderSpinner from '../../components/LoaderSpinner';
+import { AuthContex } from '../../Context/AuthProvider';
 
 const SignUp = () => {
+const { register,   handleSubmit,  formState: { errors }, } = useForm();
+const { createUser,user,loading}  = useContext(AuthContex);
 
-    const { register,   handleSubmit,  formState: { errors }, } = useForm();
-    const onSubmit = (data) =>{
-       console.log(data)
-      };
+
+
+if(user && loading){
+  return <LoaderSpinner></LoaderSpinner>
+}
+
+const onSubmit = (data) =>{
+     createUser(data.email, data.password)
+     .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log(user)
+      toast.success('account create successfuly')
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+    };
 
     return (
         <div className="w-5/6 lg:w-1/3 mx-auto shadow-lg p-6  rounded-lg bg-white mt-4 mb-4">
