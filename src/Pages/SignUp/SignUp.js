@@ -7,7 +7,7 @@ import { AuthContex } from '../../Context/AuthProvider';
 
 const SignUp = () => {
 const { register,   handleSubmit,  formState: { errors }, } = useForm();
-const { createUser,user,loading}  = useContext(AuthContex);
+const { createUser,user,loading,gooleSingUp}  = useContext(AuthContex);
 
 
 
@@ -30,6 +30,24 @@ const onSubmit = (data) =>{
       // ..
     });
     };
+
+
+    const handelGoogleSignUP=()=>{
+
+       gooleSingUp()
+       .then((result) => {
+        
+        const user = result.user;
+        toast.success('google login successfuly')
+        console.log(user)
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+         toast.error(error.message)
+        // ...
+      });
+
+    }
 
     return (
         <div className="w-5/6 lg:w-1/3 mx-auto shadow-lg p-6  rounded-lg bg-white mt-4 mb-4">
@@ -86,7 +104,7 @@ const onSubmit = (data) =>{
           <div className="divider">OR</div>
           {/* google */}
           <div>
-          <button className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button>
+          <button onClick={handelGoogleSignUP} className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button>
           </div>
         </form>
       </div>

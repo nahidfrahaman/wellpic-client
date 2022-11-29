@@ -8,7 +8,7 @@ import { AuthContex } from '../../Context/AuthProvider';
 
 const Login = () => {
   const { register,   handleSubmit,  formState: { errors }, } = useForm();
-    const {login,loading, setLoading,user}  = useContext(AuthContex);
+    const {login,loading, setLoading,user,gooleSingUp}  = useContext(AuthContex);
     const navigate = useNavigate()
 
 
@@ -34,6 +34,24 @@ const Login = () => {
       };
 
 
+
+      const handelGoogleSignUP=()=>{
+
+        gooleSingUp()
+        .then((result) => {
+         
+         const user = result.user;
+         toast.success('google login successfuly')
+         console.log(user)
+         navigate('/')
+         // ...
+       }).catch((error) => {
+         // Handle Errors here.
+          toast.error(error.message)
+         // ...
+       });
+ 
+     }
 
     return (
         <div className="w-5/6 lg:w-1/3 mx-auto shadow-lg p-6  rounded-lg bg-white mt-4 mb-4">
@@ -78,7 +96,7 @@ const Login = () => {
           <div className="divider">OR</div>
           {/* google */}
           <div>
-          <button className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button>
+          <button onClick={handelGoogleSignUP} className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button>
           </div>
         </form>
       </div>
