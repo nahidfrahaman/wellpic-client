@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LoaderSpinner from '../../components/LoaderSpinner';
 import { AuthContex } from '../../Context/AuthProvider';
 
@@ -9,7 +9,9 @@ import { AuthContex } from '../../Context/AuthProvider';
 const Login = () => {
   const { register,   handleSubmit,  formState: { errors }, } = useForm();
     const {login,loading, setLoading,user,gooleSingUp}  = useContext(AuthContex);
-    const navigate = useNavigate()
+    const navigate= useNavigate()
+    const location= useLocation()
+    const from= location.state?.from?.pathname || '/'
 
 
     if(user && loading){
@@ -25,7 +27,7 @@ const Login = () => {
         toast.success('user login confirm')
         // ...
         setLoading(false)
-        navigate('/')
+        navigate(from, {replace: true})
       })
       .catch((error) => {
         toast.error(error.message)
