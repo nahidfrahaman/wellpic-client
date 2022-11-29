@@ -16,20 +16,19 @@ const ProductReviewSection = () => {
 
             <section className='bg-base-200 rounded'>
             <div className='flex items-center justify-around'>
-            <div className="avatar items-center">
+            <div className="avatar w-1/3  flex items-center justify-center">
                <div className="w-24 rounded-full">
                 <img src="https://placeimg.com/192/192/people" alt='' />
                 </div>
-                <div className='mt-8 ml-3'>
+                <div className='mt-12 ml-3'>
                 <h4>Name: Nahid</h4>
-                <p>age: 26</p> 
+                <p className='text-sm mt-4'>location : california uk</p> 
                 </div>
             </div>
                <div>
                  <p>this is very good product for that reason you will buy</p>
                </div>
             </div>
-            
             </section>
         </div>
     );
