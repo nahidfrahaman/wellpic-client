@@ -12,9 +12,9 @@ const Sevice = () => {
  
  
   return (
-    <section className="mt-4 mb-8">
+    <section className=" mx-auto mt-4 mb-8">
       <h2 className="text-center text-primary text-3xl font-bold">Our Services </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
     {
        services && 
        services.map(service=> <HomeServiceCard
