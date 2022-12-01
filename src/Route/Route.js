@@ -9,6 +9,8 @@ import Services from "../Pages/services/Services";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
+
+
 export  const router = createBrowserRouter([
     {
       path:"/",
@@ -48,11 +50,10 @@ export  const router = createBrowserRouter([
         {
           path: "/myreview",
           element: <PrivateRoute><MyRevies></MyRevies></PrivateRoute>
-
         },
         {
           path: "/addservices",
-          element: <AddService></AddService>
+          element: <PrivateRoute><AddService></AddService></PrivateRoute>
 
         }
        
