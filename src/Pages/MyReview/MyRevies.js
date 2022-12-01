@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContex } from '../../Context/AuthProvider';
 
 const MyRevies = () => {
@@ -13,7 +14,21 @@ const MyRevies = () => {
         }
 
    })
-    console.log(myreviews)
+    const handelreviewDelete=(id)=>{
+      console.log(id)
+       fetch(`http://localhost:5000/deletereviews/${id}`,{
+        method:'DELETE'
+       })
+       .then(res=> res.json())
+       .then(data=> {
+        console.log(data)
+         if(data.acknowledged){
+          toast.success('review delete successfuly')
+          refetch()
+         }
+       })
+    }
+    
     return (
       <div className='min-h-screen'>
       {myreviews.length >0 ?<div className='min-h-screen'>
@@ -40,7 +55,7 @@ const MyRevies = () => {
               <td>{review.nameOfSevice}</td>
               <td>{review.reviews}</td>
               <td><button className='btn btn-sm btn-warning'>Edit Reviews</button></td>
-              <td><button className='btn btn-sm btn-danger'>Delete</button></td>
+              <td><button onClick={()=>handelreviewDelete(review._id)} className='btn btn-sm btn-danger'>Delete</button></td>
             </tr>)
           }
           
