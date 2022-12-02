@@ -30,14 +30,14 @@ export  const router = createBrowserRouter([
          path:'/services',
          element:<Services></Services>,
          loader : async()=>{
-          return fetch('http://localhost:5000/all/services')
+          return fetch('https://b6a11-service-review-server-side-nahidfrahaman.vercel.app/all/services')
          }
         },
         {
          path:'/service/:id',
          element:<DetailsService></DetailsService>,
          loader: async({params})=>{
-           return fetch(`http://localhost:5000/service/${params.id}`)
+           return fetch(`https://b6a11-service-review-server-side-nahidfrahaman.vercel.app/service/${params.id}`)
          }
         },
         {
@@ -66,7 +66,7 @@ export  const router = createBrowserRouter([
         //   path:'/catagories/:id',
         //   element:<Catagory></Catagory>,
         //   loader:async({params})=> {
-        //     return fetch(`http://localhost:5000/catagories/${params.id}`)}
+        //     return fetch(`https://b6a11-service-review-server-side-nahidfrahaman.vercel.app/catagories/${params.id}`)}
         // }
       ]
     },

@@ -1,4 +1,4 @@
-import { async } from '@firebase/util';
+
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -14,7 +14,7 @@ const AddService = () => {
           discription: data.discription,
           price: data.price
         }
-        fetch('http://localhost:5000/addservice', {
+        fetch('https://b6a11-service-review-server-side-nahidfrahaman.vercel.app/addservice', {
           method:"POST",
           headers: {
             "content-type": "application/json"

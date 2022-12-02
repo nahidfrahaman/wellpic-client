@@ -9,14 +9,14 @@ const MyRevies = () => {
    const {data:myreviews=[], refetch}= useQuery({
         queryKey: ["/myreviews"],
         queryFn: ()=>{
-        return  fetch(`http://localhost:5000/myreviews/${user.email}`)
+        return  fetch(`https://b6a11-service-review-server-side-nahidfrahaman.vercel.app/myreviews/${user.email}`)
           .then(res=> res.json())
         }
 
    })
     const handelreviewDelete=(id)=>{
       console.log(id)
-       fetch(`http://localhost:5000/deletereviews/${id}`,{
+       fetch(`https://b6a11-service-review-server-side-nahidfrahaman.vercel.app/deletereviews/${id}`,{
         method:'DELETE'
        })
        .then(res=> res.json())

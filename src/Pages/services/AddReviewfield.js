@@ -24,7 +24,7 @@ const AddReviewfield = ({data}) => {
         serviceId: serviceId,
     }
     console.log(reviewInformation)
-     fetch('http://localhost:5000/addreview',{
+     fetch('https://b6a11-service-review-server-side-nahidfrahaman.vercel.app/addreview',{
       method: "POST",
       headers:{
         "content-type": "application/json"
@@ -35,6 +35,7 @@ const AddReviewfield = ({data}) => {
      .then(data=> {
         if(data.acknowledged){
           toast.success('review added successfuly')
+          window.location.reload()
         }
      })
   }
