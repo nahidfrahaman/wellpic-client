@@ -4,6 +4,7 @@ import ServiceCard from "./ServiceCard";
 
 const Services = () => {
    const datas = useLoaderData()
+   console.log(datas)
    
   return (
      <div className="">
@@ -12,7 +13,7 @@ const Services = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {
-         datas.map(data=> <ServiceCard
+         datas?.map(data=> <ServiceCard
          data={data}
          key={data._id}
          ></ServiceCard>)

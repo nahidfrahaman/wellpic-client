@@ -1,11 +1,31 @@
+import { async } from '@firebase/util';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 const AddService = () => {
     const { register,   handleSubmit,  formState: { errors }, } = useForm();
 
     const onSubmit=(data)=>{
-        console.log(data)
+      
+        const serviceDetails = {
+          name: data.name,
+          img : data.imgUrl,
+          discription: data.discription,
+          price: data.price
+        }
+        fetch('http://localhost:5000/addservice', {
+          method:"POST",
+          headers: {
+            "content-type": "application/json"
+          },
+          body: JSON.stringify(serviceDetails)
+        })
+        .then(res=> res.json())
+        .then(data => {
+          console.log(data)
+          toast.success('service added successfuly')
+        })
     }
     return (
         <div className='min-h-screen mt-8 w-1/2 mx-auto mb-8'>
