@@ -22,7 +22,7 @@ const Navbar = () => {
 
    const navbarItem= <>
      <li><Link to="/home">Home</Link></li>
-     <li><Link to="/">blog</Link></li>
+     <li><Link to="/blog">blog</Link></li>
      {
       user?.uid ? <>
       <li><Link to="/myreview">My review </Link></li>
